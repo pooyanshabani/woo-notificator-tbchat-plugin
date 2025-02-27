@@ -1,0 +1,23 @@
+.wtnp-help-section {
+    display: flex;
+    gap: 10px;
+}
+.wtnp-help-section img {
+    width: 20px;
+}
+.wtnp-telicon-settings::before , .wtnp-baleicon-settings::before {
+	content: ".";
+    margin-left: 10px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 26px;
+    display: inline-block;
+    color: #ffffff00;
+}
+.wtnp-help-mainsep  {
+    border: 1px dashed #257cb8;
+    padding: 5px;
+    border-radius: 8px;
+    background: #f3f3f3;
+	margin-bottom: 8px;
+}
