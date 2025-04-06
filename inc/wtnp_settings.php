@@ -36,30 +36,13 @@ function wtnp_get_settings() {
 				'placeholder'   => 'Telegram Token', 
                 'id'        => 'wtnp_settings_teltoken',
                 'css'       => 'min-width:300px;',
-				'desc'      => 'برای دریافت توکن ربات notificator تلگرام به راهنمای بالای صفحه مراجعه کنید ', 
+				'desc'      => 'برای دریافت توکن ربات wpnotificatorbot تلگرام به راهنمای بالای صفحه مراجعه کنید ', 
 				'desc_tip'  => true,
 				'attributes'    => array(
 					'required'  => 'required' // اضافه کردن ویژگی اجباری به فیلد input
 				),
             ),
-			// Bale Checkbox
-			array(
-				'title'     => 'اطلاع رسانی بله', 
-				'desc'      => 'فعال کردن اطلاع رسانی بله', 
-				'default'   => 'no', 
-				'id'        => 'wtnp_settings_balecb',
-				'type'      => 'checkbox', 
-			),			
-            // Bale Token
-            array(
-                'title'     => 'توکن بله', 
-                'type'      => 'text',
-				'placeholder'   => 'Bale Token', 
-                'id'        => 'wtnp_settings_baletoken',
-                'css'       => 'min-width:300px;',
-				'desc'      => 'برای دریافت توکن ربات notificator بله به راهنمای بالای صفحه مراجعه کنید',
-				'desc_tip'  => true,
-            ),
+
 			
             // Section end
             array(
@@ -172,21 +155,13 @@ function wtnp_add_custom_help_tab() {
 function wtnp_help_tabcallback() {
 	?>
 	<div class="wtnp-help-cls">
-		<div class="wtnp-help-mainsep">
-			<div class="wtnp-help-section">
-				<img src="<?php echo WTNP_TNOTIF_IMAGES_URL . 'wtnp-bale.svg'?>">
-				<p><strong>دریافت توکن بله:</strong></p>
-			</div>		
-			<p>در اپلیکیشن بله، یوزرنیم @notificator_ir_bot را جستجو کنید و یا روی <a href="https://ble.ir/notificator_ir_bot" target="_blank">لینک</a> کلیک کنید
-			دستور /token را وارد کنید و توکن را کپی کنید.		
-			</p>
-		</div>
+
 		<div class="wtnp-help-mainsep">
 			<div class="wtnp-help-section">
 				<img src="<?php echo WTNP_TNOTIF_IMAGES_URL . 'wtnp-telegram.svg'?>">
 				<p><strong>دریافت توکن تلگرام:</strong></p>
 			</div>		
-			<p>در اپلیکیشن تلگرام، یوزرنیم @notificator_ir_bot را جستجو کنید و یا روی <a href="https://t.me/notificator_ir_bot" target="_blank">لینک</a> کلیک کنید
+			<p>در اپلیکیشن تلگرام، یوزرنیم @wpnotificatorbot را جستجو کنید و یا روی <a href="https://t.me/wpnotificatorbot" target="_blank">لینک</a> کلیک کنید
 			دستور /token را وارد کنید و توکن را کپی کنید.		
 			</p>
 			<p>⚠ در صورتی که قصد عضو کردن ربات نوتیفیکیتور تلگرام را در گروه دارید، ابتدا ربات را در گروه عضو نمایید سپس توکن گروه را دریافت و در تنظیمات افزونه وارد نمایید.</p>
