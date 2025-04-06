@@ -50,21 +50,21 @@ if ( get_post_type( $post_id ) !== 'product' ) {
 	$wtnp_message .= "✉️ ایمیل: $user_email" . "\n";
 	$wtnp_message .= "🗒 متن دیدگاه : $comment_content" . "\n";
 	$wtnp_message .= "\n" . "📦 نام محصول : $post_name" . "\n";
-	$wtnp_message .= "\n" . "$post_link" . "\n";
+	$wtnp_message .= "#دیدگاه_جدید";
+	$url_link = $post_link;
 
 	global $wtnp_settings_telegramcb;
 	global $wtnp_settings_teltoken;
-	global $wtnp_settings_balecb;
-	global $wtnp_settings_baletoken;
+
 
     
     if ($wtnp_settings_telegramcb == 'yes' && $wtnp_settings_teltoken) {
-		notificator_send_message_wtnp_telegram($wtnp_message);
+		notificator_send_message_wtnp_telegram($wtnp_message , $url_link);
 	}
-	if ($wtnp_settings_balecb == 'yes' && $wtnp_settings_baletoken) {
-		notificator_send_message_wtnp_bale($wtnp_message);
-	}
+
 
 }
 
+
+//die ( $wtnp_settings_baletoken );
 
