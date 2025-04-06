@@ -2,7 +2,7 @@
 /*
  * Plugin Name: وو نوتیفیکیتور
  * Plugin URI: https://www.zhaket.com/store/web/darsad
- * Description: دریافت نوتیفیکیشن در تلگرام و بله از فروشگاه ووکامرس (ثبت سفارش، به روزرسانی سفارش، ثبت دیدگاه جدید، کم شدن یا تمام شدن موجودی محصولات) 
+ * Description: دریافت نوتیفیکیشن در تلگرام از فروشگاه ووکامرس (ثبت سفارش، به روزرسانی سفارش، ثبت دیدگاه جدید، کم شدن یا تمام شدن موجودی محصولات) 
  * Author: درصد - پویان شعبانی
  * Author URI: https://www.zhaket.com/store/web/darsad
  * License: GPL v2 or later
@@ -93,11 +93,9 @@ add_action('admin_enqueue_scripts', function () {
 			WTNP_JSCCS_ASSEST_VER
 		);
 		$telegrambeforebg = WTNP_TNOTIF_IMAGES_URL . 'wtnp-telegram.svg';
-		$balebeforebg = WTNP_TNOTIF_IMAGES_URL . 'wtnp-bale.svg';
 		wp_add_inline_style(
 			'wtnp-admin-style',
 			".wtnp-telicon-settings::before { background-image: url($telegrambeforebg)}
-			.wtnp-baleicon-settings::before { background-image: url($balebeforebg)}	
 			"
         );
 	}
@@ -106,8 +104,7 @@ add_action('admin_enqueue_scripts', function () {
 
 $wtnp_settings_telegramcb = '';
 $wtnp_settings_teltoken ='';
-$wtnp_settings_balecb = '';
-$wtnp_settings_baletoken ='';
+
 $wtnp_settings_neworder ='';
 $wtnp_settings_orderstatus ='';
 $wtnp_settings_outofstock ='';
@@ -117,8 +114,6 @@ $wtnp_settings_comment ='';
 global $wpdb;
 if ( get_option('wtnp_settings_telegramcb') ) {$wtnp_settings_telegramcb = get_option('wtnp_settings_telegramcb');}
 if ( get_option('wtnp_settings_teltoken') ) {$wtnp_settings_teltoken = get_option('wtnp_settings_teltoken');}
-if ( get_option('wtnp_settings_balecb') ) {$wtnp_settings_balecb = get_option('wtnp_settings_balecb');}
-if ( get_option('wtnp_settings_baletoken') ) {$wtnp_settings_baletoken = get_option('wtnp_settings_baletoken');}
 if ( get_option('wtnp_settings_neworder') ) {$wtnp_settings_neworder = get_option('wtnp_settings_neworder');}
 if ( get_option('wtnp_settings_orderstatus') ) {$wtnp_settings_orderstatus = get_option('wtnp_settings_orderstatus');}
 if ( get_option('wtnp_settings_outofstock') ) {$wtnp_settings_outofstock = get_option('wtnp_settings_outofstock');}
