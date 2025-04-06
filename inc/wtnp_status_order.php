@@ -103,22 +103,21 @@ function wtnp_so_status_completed($order_id, $old_status, $new_status)
 	if($shipping_cost) {$wtnp_message .= "\n" . "📦 هزینه ارسال: $shipping_cost " . "\n";}
 	if($coupon_name){$wtnp_message .= "🎟 کد تخفیف: $coupon_name" . "\n" . "💲 مقدار تخفیف: - $discount_total" . "\n";}
     $wtnp_message .= "💰 مبلغ کل: $order_total " . " $wtnp_currency". "\n";
-	$wtnp_message .= "\n" . get_admin_url() . "/post.php?post=" . $order_id ."&action=edit";
+    $wtnp_message .= "#بروزرسانی_سفارش";
+	$url_link = get_admin_url() . "post.php?post=" . $order_id ."&action=edit";
+
 
 	if ($order_date != $date_modified) {
 		
 		global $wtnp_settings_telegramcb;
 		global $wtnp_settings_teltoken;
-		global $wtnp_settings_balecb;
-		global $wtnp_settings_baletoken;
+
 
     
 		if ($wtnp_settings_telegramcb == 'yes' && $wtnp_settings_teltoken) {
-			notificator_send_message_wtnp_telegram($wtnp_message);
+			notificator_send_message_wtnp_telegram($wtnp_message, $url_link);
 		}
-		if ($wtnp_settings_balecb == 'yes' && $wtnp_settings_baletoken) {
-			notificator_send_message_wtnp_bale($wtnp_message);
-		}
+
 		
 	}
 }
